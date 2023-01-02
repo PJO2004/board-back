@@ -1,0 +1,14 @@
+fastapi
+fastapi-jwt-auth[asymmetric]
+pyyaml
+pymysql
+python-gitlab
+python-multipart
+passlib[bcrypt]
+pydantic[dotenv]
+pydantic[email] 
+redis
+requests
+starlette_exporter
+SQLAlchemy
+uvicorn[standard]

@@ -1,0 +1,5 @@
+uvicorn[standard]
+fastapi
+pydantic[dotenv]
+fastapi-jwt-auth[asymmetric]
+starlette_exporter

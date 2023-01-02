@@ -1,0 +1,10 @@
+{
+  "ho": {
+    "type": "str",
+    "default": "hoyoung"
+  },
+  "hos": {
+    "type": "str",
+    "default": "hoyousng"
+  }
+}
