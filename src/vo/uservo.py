@@ -10,17 +10,13 @@ sys.path.append(
 )
 from constantstore import constant
 
-
 class UserB(BaseModel):
     userid: str
     username: str
     password: constr(min_length=8)
-    email: EmailStr
-    groupname: Optional[str] = None
 
     class Config:
         orm_mode: bool = True
-
 
 class LoginInfo(BaseModel):
     userid: str
@@ -32,10 +28,7 @@ class UserInfoN:
         self.userid: str = userid
         self.username: str = username
         self.password: str = password
-        self.email: str = email
-        self.groupname: str = groupname
         self.hashedpassword: str = self.hashpasswords(self.password)
-        self.token: str = None
 
     def hashpasswords(self, password) -> str:
         return constant.PASSWORD_CONTEXT.hash(password)

@@ -11,23 +11,15 @@ sys.path.append(
 )
 from constantstore import constant
 
-"""
-
-DB 연결 관련 처리
-그 어떤 것도 그렇지만 호영이 만든 파일
-
-"""
-
-
-class AlchemyHo:
+class Alchemy:
     def __init__(self):
         self._engine = None
         self._session = None
         self.init_app()
-
+    
     def init_app(self):
         self._engine = create_engine(constant.SQLALCHEMY_DATABASE_URL)
-        self._session = sessionmaker(autocommit=False, autoflush=False, bind=self.engine)
+        self.session = sessionmaker(autocommit=False, autoflush=False, bind=self.engine)
         self._base = declarative_base()
 
     def get_db(self):
@@ -50,5 +42,4 @@ class AlchemyHo:
     def engine(self):
         return self._engine
 
-
-db: AlchemyHo = AlchemyHo()
+db: Alchemy = Alchemy()
